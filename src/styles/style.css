@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --background-color: black;
+  --font-color: #e5e5e5;
+  --ball-color: #fca311;
+  --column-color: #14213d;
+}
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--font-color);
+  background-color: var(--background-color);
+}
