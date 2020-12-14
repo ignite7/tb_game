@@ -1,0 +1,11 @@
+/* Header */
+.header {
+  display: flex;
+  justify-content: center;
+  margin: 5rem;
+}
+.header h1 {
+  font-size: 3.8rem;
+  text-decoration: underline;
+  text-shadow: 0.1rem 0.1rem var(--primary-color);
+}

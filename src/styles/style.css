@@ -1,3 +1,4 @@
+/* Base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,8 +12,9 @@ html {
 :root {
   --background-color: black;
   --font-color: #e5e5e5;
-  --ball-color: #fca311;
-  --column-color: #14213d;
+  --primary-color: #fca311;
+  --second-color: #14213d;
+  --warning-color: #f1c47b;
 }
 
 body {
