@@ -18,7 +18,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.8rem;
+  font-size: 2rem;
   text-align: center;
   background-color: transparent;
   color: var(--font-color);
@@ -34,10 +34,45 @@
   margin: 0.5rem;
   color: var(--warning-color);
 }
+.start-level {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+.start-level__mode {
+  display: flex;
+  justify-content: center;
+  width: 33%;
+  margin: 1rem;
+}
+.start-level__btn {
+  width: 100%;
+  font-size: 2rem;
+  background-color: transparent;
+  border: 0.2rem solid var(--primary-color);
+  border-radius: 2rem;
+  color: var(--font-color);
+  padding: 0.5rem;
+  cursor: pointer;
+  outline: none;
+  transition: 1s;
+  will-change: transform;
+}
+.start-level__btn:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+.start-level__btn:active {
+  transform: scale(0.9);
+}
+.start-level__btn.clicked {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
 .start-play {
   display: flex;
   justify-content: center;
-  margin-bottom: 8rem;
+  margin-bottom: 10rem;
 }
 .start-play__icon {
   display: flex;
@@ -47,6 +82,7 @@
   cursor: pointer;
   animation: icon-play 2.5s ease-in-out forwards infinite alternate;
   transition: 1s;
+  will-change: transform;
 }
 .start-play__icon:hover {
   animation-play-state: paused;
