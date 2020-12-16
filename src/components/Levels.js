@@ -1,14 +1,17 @@
 // React
-import { Fragment, useContext } from "react";
+import React, { Fragment, useContext } from "react";
 
 // Context
-import ThemeContext from "../context/ThemeContext";
+import AppContext from "../context/AppContext";
+
+// Css
+import "../styles/components/levels.css";
 
 function Levels() {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { state, setState } = useContext(AppContext);
 
   const handleOnClick = (event) => {
-    setTheme({ ...theme, level: event.target.value, showPlay: true });
+    setState({ ...state, level: event.target.value, showPlay: true });
 
     let btnEasy = document.getElementById("btn-level-easy");
     let btnNormal = document.getElementById("btn-level-normal");
@@ -31,7 +34,7 @@ function Levels() {
 
   return (
     <Fragment>
-      {theme.showDifficultLevel && (
+      {state.showDifficultLevel && (
         <div className="start-level">
           <div className="start-level__mode">
             <button

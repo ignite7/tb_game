@@ -1,0 +1,36 @@
+/* Start levels */
+.start-level {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+.start-level__mode {
+  display: flex;
+  justify-content: center;
+  width: 33%;
+  margin: 1rem;
+}
+.start-level__btn {
+  width: 100%;
+  font-size: 2rem;
+  background-color: transparent;
+  border: 0.2rem solid var(--primary-color);
+  border-radius: 2rem;
+  color: var(--font-color);
+  padding: 0.5rem;
+  cursor: pointer;
+  outline: none;
+  transition: 1s;
+  will-change: transform;
+}
+.start-level__btn:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+.start-level__btn:active {
+  transform: scale(0.9);
+}
+.start-level__btn.clicked {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}

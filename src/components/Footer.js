@@ -1,3 +1,9 @@
+// React
+import React from 'react';
+
+// Css
+import "../styles/components/footer.css"
+
 function Footer() {
   return (
     <h6>

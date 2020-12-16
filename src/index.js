@@ -1,22 +1,20 @@
 // React
+import React from "react";
 import ReactDOM from "react-dom";
 
 // App
 import App from "./App";
 
 // Context
-import { ThemeContextProvider } from "./context/ThemeContext";
+import { AppContextProvider } from "./context/AppContext";
 
 // Css
 import "./styles/style.css";
-import "./styles/header.css";
-import "./styles/start.css";
-import "./styles/footer.css";
 
 // DOM
 ReactDOM.render(
-  <ThemeContextProvider>
+  <AppContextProvider>
     <App />
-  </ThemeContextProvider>,
+  </AppContextProvider>,
   document.getElementById("root")
 );

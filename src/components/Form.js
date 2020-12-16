@@ -1,16 +1,19 @@
 // React
-import { useContext, useRef } from "react";
+import React, { useContext, useRef } from "react";
 
 // Context
-import ThemeContext from "../context/ThemeContext";
+import AppContext from "../context/AppContext";
+
+// Css
+import "../styles/components/form.css";
 
 function Form() {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { state, setState } = useContext(AppContext);
   const refUsername = useRef("");
 
   const handleOnChange = () => {
-    setTheme({
-      ...theme,
+    setState({
+      ...state,
       username: refUsername.current.value,
       showDifficultLevel: true,
     });
@@ -34,7 +37,7 @@ function Form() {
           maxLength="25"
           required
         />
-        {theme.error && <h6 className="start-form__error">{theme.error}</h6>}
+        {state.error && <h6 className="start-form__error">{state.error}</h6>}
       </form>
     </div>
   );

@@ -1,8 +1,8 @@
 // React
-import { Fragment, useContext } from "react";
+import React, { Fragment, useContext } from "react";
 
 // Context
-import ThemeContext from "./context/ThemeContext";
+import AppContext from "./context/AppContext";
 
 // Components
 import Header from "./components/Header";
@@ -10,14 +10,14 @@ import Start from "./pages/Start";
 import Footer from "./components/Footer";
 
 function App() {
-  const { theme } = useContext(ThemeContext);
+  const { state } = useContext(AppContext);
 
   return (
     <Fragment>
       <header className="header">
         <Header />
       </header>
-      <main className="main">{!theme.goGame && <Start />}</main>
+      <main className="main">{!state.goGame && <Start />}</main>
       <footer className="footer">
         <Footer />
       </footer>
