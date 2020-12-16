@@ -1,27 +1,24 @@
 // React
-import React, { Fragment, useContext } from "react";
-
-// Context
-import AppContext from "./context/AppContext";
-
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+//
 // Components
-import Header from "./components/Header";
+import Layout from "./components/Layout";
+
+// Pages
 import Start from "./pages/Start";
-import Footer from "./components/Footer";
+import Game from "./pages/Game";
 
 function App() {
-  const { state } = useContext(AppContext);
-
   return (
-    <Fragment>
-      <header className="header">
-        <Header />
-      </header>
-      <main className="main">{!state.goGame && <Start />}</main>
-      <footer className="footer">
-        <Footer />
-      </footer>
-    </Fragment>
+    <BrowserRouter>
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={Start} />
+          <Route exact path="/game" component={Game} />
+        </Switch>
+      </Layout>
+    </BrowserRouter>
   );
 }
 

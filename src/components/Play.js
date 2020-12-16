@@ -1,5 +1,6 @@
 // React
 import React, { Fragment, useContext } from "react";
+import { Link } from "react-router-dom";
 
 // Context
 import AppContext from "../context/AppContext";
@@ -31,11 +32,13 @@ function Play() {
     <Fragment>
       {state.showPlay && (
         <div className="start-play">
-          <GoPlay
-            onClick={handleOnClick}
-            name="start"
-            className="start-play__icon"
-          />
+          <Link to="/game">
+            <GoPlay
+              onClick={handleOnClick}
+              name="start"
+              className="start-play__icon"
+            />
+          </Link>
         </div>
       )}
     </Fragment>
