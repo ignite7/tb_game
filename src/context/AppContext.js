@@ -10,6 +10,7 @@ export function AppContextProvider({ children }) {
     goGame: false,
     showDifficultLevel: false,
     showPlay: false,
+    hasWon: false,
     error: "",
   });
 

@@ -28,7 +28,11 @@ function Start() {
       >
         <Levels />
       </CSSTransition>
-      <CSSTransition in={state.showPlay} timeout={500} classNames="fade">
+      <CSSTransition
+        in={state.showPlay}
+        timeout={500}
+        classNames="fade"
+      >
         <Play />
       </CSSTransition>
     </Fragment>

@@ -12,7 +12,7 @@
   cursor: pointer;
   animation: icon-play 2.5s ease-in-out forwards infinite alternate;
   transition: 1s;
-  will-change: transform;
+  will-change: transform transition;
 }
 .start-play__icon:hover {
   animation-play-state: paused;

@@ -1,0 +1,139 @@
+/* Game ball */
+.game-ball {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem;
+  will-change: transform;
+}
+
+.game-ball__column-1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 20%;
+  animation-name: change-column-1-position;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  will-change: transform;
+}
+.game-ball__column-1.paused {
+  animation-play-state: paused;
+}
+.game-ball__column-2 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 20%;
+  animation-name: change-column-2-position;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  will-change: transform;
+}
+
+.game-ball__ball {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 60%;
+  height: 20rem;
+  animation-name: ball-x;
+  animation-duration: 5s;
+  animation-delay: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  will-change: transform;
+}
+.game-ball__ball.paused {
+  animation-play-state: paused;
+}
+
+/* Objects */
+.column-1 {
+  display: flex;
+  width: 2rem;
+  height: 100%;
+  border-left: dotted 1rem var(--column-color);
+}
+
+.column-2 {
+  display: flex;
+  width: 2rem;
+  height: 100%;
+  border-right: dotted 1rem var(--column-color);
+}
+
+.ball {
+  display: flex;
+  width: 10rem;
+  height: 10rem;
+  background-image: url("../../images/ball.png");
+  border-radius: 50%;
+  animation-name: ball-y;
+  animation-duration: 0.3s;
+  animation-delay: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  will-change: transform;
+}
+
+/* Animations */
+/* Change column position */
+@keyframes change-column-1-position {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(2rem);
+  }
+  100% {
+    transform: rotate(90deg);
+    height: 27rem;
+  }
+}
+
+@keyframes change-column-2-position {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-2rem);
+  }
+  100% {
+    transform: rotate(-90deg);
+    height: 27rem;
+  }
+}
+
+/* Change ball position*/
+@keyframes ball-y {
+  0% {
+    transform: translateY(-2rem) scale(1, 0.8);
+  }
+  100% {
+    transform: translateY(-10rem);
+  }
+}
+
+@keyframes ball-x {
+  0% {
+    transform: translateX(0rem);
+  }
+  25% {
+    transform: translateX(-5rem);
+  }
+  50% {
+    transform: translateX(5rem);
+  }
+  75% {
+    transform: translateX(-10rem);
+  }
+  100% {
+    transform: translateX(10rem);
+  }
+}

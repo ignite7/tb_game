@@ -9,12 +9,12 @@ import "../styles/components/form.css";
 
 function Form() {
   const { state, setState } = useContext(AppContext);
-  const refUsername = useRef("");
+  const form = useRef("");
 
   const handleOnChange = () => {
     setState({
       ...state,
-      username: refUsername.current.value,
+      username: form.current.value,
       showDifficultLevel: true,
     });
   };
@@ -22,8 +22,8 @@ function Form() {
   return (
     <div className="start-form">
       <form
-        onSubmit={(e) => {
-          e.preventDefault();
+        onSubmit={(event) => {
+          event.preventDefault();
         }}
       >
         <label htmlFor="username">Username</label>
@@ -31,10 +31,10 @@ function Form() {
           type="text"
           onChange={handleOnChange}
           name="username"
-          ref={refUsername}
           className="start-form__username"
           minLength="4"
           maxLength="25"
+          ref={form}
           required
         />
         {state.error && <h6 className="start-form__error">{state.error}</h6>}

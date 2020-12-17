@@ -1,13 +1,22 @@
 //React
-import React, { useContext } from "react";
+import React, { Fragment, useContext } from "react";
 
 // Context
 import AppContext from "../context/AppContext";
 
+// Components
+import Ball from "../components/Ball";
+import Controls from "../components/Controls";
+
 function Game() {
   const { state, setState } = useContext(AppContext);
 
-  return <h1>Game, {state.username}</h1>;
+  return (
+    <Fragment>
+      <Ball />
+      <Controls />
+    </Fragment>
+  );
 }
 
 export default Game;
