@@ -35,6 +35,7 @@ function Form() {
           minLength="4"
           maxLength="25"
           ref={form}
+          value={state.username && `${state.username}`}
           required
         />
         {state.error && <h6 className="start-form__error">{state.error}</h6>}

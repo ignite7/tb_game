@@ -1,6 +1,6 @@
 // React
 import React, { Fragment, useContext } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 // Context
 import AppContext from "../context/AppContext";
@@ -13,6 +13,7 @@ import "../styles/components/play.css";
 
 function Play() {
   const { state, setState } = useContext(AppContext);
+  const history = useHistory();
 
   const handleOnClick = () => {
     if (state.username === "") {
@@ -24,7 +25,8 @@ function Play() {
     } else if (state.level === "") {
       setState({ ...state, error: "Select a level please." });
     } else {
-      setState({ ...state, goGame: true });
+      setState({ ...state, goGame: true, controlStatus: "running", error: "" });
+      history.push("/game");
     }
   };
 
@@ -32,13 +34,11 @@ function Play() {
     <Fragment>
       {state.showPlay && (
         <div className="start-play">
-          <Link to="/game">
-            <GoPlay
-              onClick={handleOnClick}
-              name="start"
-              className="start-play__icon"
-            />
-          </Link>
+          <GoPlay
+            onClick={handleOnClick}
+            name="start"
+            className="start-play__icon"
+          />
         </div>
       )}
     </Fragment>

@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
 }
-.game-controls * {
+.game-controls > div * {
   display: flex;
   justify-content: center;
   font-size: 10rem;
@@ -14,7 +14,17 @@
   animation: controls 0.8s alternate infinite ease-in-out;
   will-change: transform transition;
 }
-.game-controls *:hover {
+.game-status {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  visibility: hidden;
+}
+.game-status.active {
+  visibility: visible;
+}
+.game-controls > div *:hover {
   color: var(--font-color);
   animation-play-state: paused;
 }

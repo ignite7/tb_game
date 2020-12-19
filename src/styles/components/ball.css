@@ -1,126 +1,107 @@
 /* Game ball */
 .game-ball {
   display: flex;
+  flex-direction: column;
+  margin: 5rem;
+  animation-name: position-column-y;
+  animation-duration: 1.5s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  will-change: transform;
+}
+.game-ball.pause {
+  animation-play-state: paused;
+}
+.game-ball.play {
+  animation-play-state: running;
+}
+.game-ball__column {
+  display: flex;
+  border-top: dotted 1rem var(--column-color);
+  animation-name: position-column-opacity-y;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  will-change: transform opacity;
+}
+.game-ball__column.pause {
+  animation-play-state: paused;
+}
+.game-ball__column.play {
+  animation-play-state: running;
+}
+.game-ball__container {
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5rem;
-  will-change: transform;
-}
-
-.game-ball__column-1 {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 20%;
-  animation-name: change-column-1-position;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-  will-change: transform;
-}
-.game-ball__column-1.paused {
-  animation-play-state: paused;
-}
-.game-ball__column-2 {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  width: 20%;
-  animation-name: change-column-2-position;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-  will-change: transform;
-}
-
-.game-ball__ball {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 60%;
   height: 20rem;
-  animation-name: ball-x;
-  animation-duration: 5s;
-  animation-delay: 3s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  will-change: transform;
 }
-.game-ball__ball.paused {
-  animation-play-state: paused;
-}
-
-/* Objects */
-.column-1 {
-  display: flex;
-  width: 2rem;
-  height: 100%;
-  border-left: dotted 1rem var(--column-color);
-}
-
-.column-2 {
-  display: flex;
-  width: 2rem;
-  height: 100%;
-  border-right: dotted 1rem var(--column-color);
-}
-
-.ball {
+.game-ball__balloon-x {
   display: flex;
   width: 10rem;
-  height: 10rem;
-  background-image: url("../../images/ball.png");
-  border-radius: 50%;
-  animation-name: ball-y;
-  animation-duration: 0.3s;
-  animation-delay: 1s;
-  animation-timing-function: ease-out;
+  animation-name: balloon-x;
+  animation-duration: 5s;
+  animation-delay: 3s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  will-change: transform;
+}
+.game-ball__balloon-x.pause {
+  animation-play-state: paused;
+}
+.game-ball__balloon-x.play {
+  animation-play-state: running;
+}
+.game-ball__balloon-y {
+  display: flex;
+  height: 10rem;
+  width: 10rem;
+  background-image: url("../../images/ball.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  animation-name: balloon-y;
+  animation-duration: 0.4s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   will-change: transform;
 }
+.game-ball__balloon-y.pause {
+  animation-play-state: paused;
+}
+.game-ball__balloon-y.play {
+  animation-play-state: running;
+}
 
-/* Animations */
-/* Change column position */
-@keyframes change-column-1-position {
+/* Game ball animations */
+@keyframes position-column-opacity-y {
   0% {
-    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(20rem);
+    opacity: 1;
+  }
+}
+
+@keyframes position-column-y {
+  0% {
+    transform: translateY(0);
   }
   50% {
-    transform: translateX(2rem);
+    transform: translateY(-13rem);
   }
   100% {
-    transform: rotate(90deg);
-    height: 27rem;
+    transform: translateY(2rem);
   }
 }
 
-@keyframes change-column-2-position {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-2rem);
-  }
-  100% {
-    transform: rotate(-90deg);
-    height: 27rem;
-  }
-}
-
-/* Change ball position*/
-@keyframes ball-y {
-  0% {
-    transform: translateY(-2rem) scale(1, 0.8);
-  }
-  100% {
-    transform: translateY(-10rem);
-  }
-}
-
-@keyframes ball-x {
+@keyframes balloon-x {
   0% {
     transform: translateX(0rem);
   }
@@ -135,5 +116,17 @@
   }
   100% {
     transform: translateX(10rem);
+  }
+}
+
+@keyframes balloon-y {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5rem);
+  }
+  100% {
+    transform: translateY(2rem) scale(1, 0.8);
   }
 }

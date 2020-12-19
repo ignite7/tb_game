@@ -7,7 +7,9 @@ export function AppContextProvider({ children }) {
   const [state, setState] = useState({
     username: "",
     level: "",
+    controlStatus: "",
     goGame: false,
+    goEnd: false,
     showDifficultLevel: false,
     showPlay: false,
     hasWon: false,
