@@ -7,5 +7,6 @@
 .header h1 {
   font-size: 3.8rem;
   text-decoration: underline;
+  text-align: center;
   text-shadow: 0.1rem 0.1rem var(--primary-color);
 }

@@ -25,9 +25,21 @@ function Play() {
     } else if (state.level === "") {
       setState({ ...state, error: "Select a level please." });
     } else {
-      setState({ ...state, goGame: true, controlStatus: "running", error: "" });
+      setState({ ...state, goGame: true, error: "" });
+      sleep().then(() => {
+        setState({
+          ...state,
+          controlStatus: "running",
+          goGame: true,
+          error: "",
+        });
+      });
       history.push("/game");
     }
+  };
+
+  const sleep = () => {
+    return new Promise((resolve) => setTimeout(resolve, 3000));
   };
 
   return (

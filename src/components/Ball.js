@@ -11,28 +11,29 @@ function Ball() {
   const { state, setState } = useContext(AppContext);
 
   useEffect(() => {
-    const gameBall = document.getElementById("game-ball");
+    const column = document.getElementById("game-ball");
+    const balloon = document.getElementById("balloon-y")
 
     if (state.level === "easy") {
-      gameBall.style.animationDuration = "2s";
+      column.style.animationDuration = "2s";
+      balloon.style.animationDuration = "0.5s"
     } else if (state.level === "normal") {
-      gameBall.style.animationDuration = "1.5s";
+      column.style.animationDuration = "1.5s";
+      balloon.style.animationDuration = "0.4s"
     } else if (state.level === "hard") {
-      gameBall.style.animationDuration = "0.8s";
+      column.style.animationDuration = "0.8s";
+      balloon.style.animationDuration = "0.3s"
     }
   });
 
   const handleOnClick = (event) => {
     if (
       (event.target.id === "balloon-x" && state.controlStatus === "running") ||
-      event.target.id === "balloon-y" && state.controlStatus === "running"
+      (event.target.id === "balloon-y" && state.controlStatus === "running")
     ) {
       setState({
         ...state,
-        level: "",
         controlStatus: "",
-        showDifficultLevel: false,
-        showPlay: false,
         goGame: false,
         goEnd: true,
         hasWon: true,

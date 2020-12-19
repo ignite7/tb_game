@@ -1,0 +1,41 @@
+/* Game end */
+.game-end {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 8rem;
+}
+.game-end * {
+  padding: 1rem;
+}
+.game-end__username {
+  font-size: 3.5rem;
+  color: var(--primary-color);
+  text-transform: capitalize;
+  text-align: center;
+  text-shadow: 0.1rem 0.1rem var(--font-color);
+}
+.game-end__regards {
+  font-size: 3rem;
+  color: var(--primary-color);
+  text-align: center;
+  text-shadow: 0.1rem 0.1rem var(--font-color);
+}
+.game-end__difficult {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-align: center;
+  text-shadow: 0.1rem 0.1rem var(--font-color);
+}
+.game-end__back-icon {
+  font-size: 10rem;
+  color: var(--font-color);
+  cursor: pointer;
+  transition: 1s;
+  will-change: transition transform;
+}
+.game-end__back-icon:hover {
+  color: var(--primary-color);
+  transform: rotate(-360deg);
+}

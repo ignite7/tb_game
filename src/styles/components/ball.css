@@ -2,6 +2,7 @@
 .game-ball {
   display: flex;
   flex-direction: column;
+  min-width: 20rem;
   margin: 5rem;
   animation-name: position-column-y;
   animation-duration: 1.5s;
@@ -39,7 +40,9 @@
 }
 .game-ball__balloon-x {
   display: flex;
-  width: 10rem;
+  width: 6.4rem;
+  height: 6.4rem;
+  cursor: pointer;
   animation-name: balloon-x;
   animation-duration: 5s;
   animation-delay: 3s;
@@ -56,11 +59,13 @@
 }
 .game-ball__balloon-y {
   display: flex;
-  height: 10rem;
-  width: 10rem;
+  height: 6.4rem;
+  width: 6.4rem;
   background-image: url("../../images/ball.png");
+  background-size: 4.8rem;
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
   animation-name: balloon-y;
   animation-duration: 0.4s;
   animation-delay: 2s;
@@ -124,7 +129,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(5rem);
+    transform: translateY(6rem);
   }
   100% {
     transform: translateY(2rem) scale(1, 0.8);

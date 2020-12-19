@@ -8,6 +8,7 @@ import AppContext from "../context/AppContext";
 // Components
 import Ball from "../components/Ball";
 import Controls from "../components/Controls";
+import End from "../components/End";
 
 function Game() {
   const { state, setState } = useContext(AppContext);
@@ -31,7 +32,7 @@ function Game() {
           <Controls />
         </Fragment>
       ) : (
-        <h1>You have won!</h1>
+        <End />
       )}
     </Fragment>
   );
