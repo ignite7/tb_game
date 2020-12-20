@@ -17,6 +17,7 @@
   border: 0.2rem solid var(--primary-color);
   border-radius: 2rem;
   color: var(--font-color);
+  -webkit-tap-highlight-color: transparent;
   padding: 0.5rem;
   cursor: pointer;
   outline: none;

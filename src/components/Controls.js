@@ -40,6 +40,7 @@ function Controls() {
         ...state,
         level: "",
         controlStatus: "",
+        changeTitle: false,
         goGame: false,
         showPlay: false,
       });

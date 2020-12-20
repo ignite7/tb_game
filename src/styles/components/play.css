@@ -10,6 +10,7 @@
   font-size: 10rem;
   color: var(--primary-color);
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   animation: icon-play 2.5s ease-in-out forwards infinite alternate;
   transition: 1s;
   will-change: transform transition;

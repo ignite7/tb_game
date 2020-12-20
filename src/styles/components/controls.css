@@ -12,6 +12,7 @@
   padding: 2rem;
   color: var(--primary-color);
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   transition: 1s;
   animation: controls 0.8s alternate infinite ease-in-out;
   will-change: transform transition;

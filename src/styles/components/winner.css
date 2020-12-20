@@ -32,6 +32,7 @@
   font-size: 10rem;
   color: var(--font-color);
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   transition: 1s;
   will-change: transition transform;
 }
