@@ -35,13 +35,25 @@ function Controls() {
       ballY.classList.remove("pause");
       setState({ ...state, controlStatus: "running" });
       controlStatus.classList.remove("active");
-    } else if (event.currentTarget.id === "backward") {
-      setState({ ...state, level: "", controlStatus: "", goGame: false });
+    } else if (event.currentTarget.id === "backward" && !state.sleep) {
+      setState({
+        ...state,
+        level: "",
+        controlStatus: "",
+        goGame: false,
+        showPlay: false,
+      });
       history.push("/");
     }
   };
+
   return (
     <Fragment>
+      {state.sleep && (
+        <div className="game-count active" id="game-count">
+          <h3>Game starts in </h3>
+        </div>
+      )}
       <div className="game-status" id="game-status">
         <h3>Game Paused</h3>
       </div>

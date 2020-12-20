@@ -20,7 +20,7 @@
 }
 .game-ball__column {
   display: flex;
-  border-top: dotted 1rem var(--column-color);
+  border-top: dashed 0.5rem var(--column-color);
   animation-name: position-column-opacity-y;
   animation-duration: 2s;
   animation-fill-mode: forwards;
@@ -40,8 +40,8 @@
 }
 .game-ball__balloon-x {
   display: flex;
-  width: 6.4rem;
-  height: 6.4rem;
+  width: 4.8rem;
+  height: 4.8rem;
   cursor: pointer;
   animation-name: balloon-x;
   animation-duration: 5s;
@@ -59,8 +59,8 @@
 }
 .game-ball__balloon-y {
   display: flex;
-  height: 6.4rem;
-  width: 6.4rem;
+  height: 4.8rem;
+  width: 4.8rem;
   background-image: url("../../images/ball.png");
   background-size: 4.8rem;
   background-repeat: no-repeat;
@@ -129,7 +129,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(6rem);
+    transform: translateY(8rem);
   }
   100% {
     transform: translateY(2rem) scale(1, 0.8);

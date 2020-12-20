@@ -25,12 +25,20 @@ function Play() {
     } else if (state.level === "") {
       setState({ ...state, error: "Select a level please." });
     } else {
-      setState({ ...state, goGame: true, error: "" });
+      setState({
+        ...state,
+        goGame: true,
+        sleep: true,
+        changeTitle: true,
+        error: "",
+      });
       sleep().then(() => {
         setState({
           ...state,
-          controlStatus: "running",
           goGame: true,
+          sleep: false,
+          changeTitle: true,
+          controlStatus: "running",
           error: "",
         });
       });

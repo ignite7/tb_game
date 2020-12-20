@@ -1,9 +1,12 @@
 // Reatc
 import React, { useContext } from "react";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 // Context
 import AppContext from "../context/AppContext";
+
+// Components
+import Heart from "./Heart";
 
 // Icons
 import { AiOutlineRollback } from "react-icons/ai";
@@ -13,10 +16,16 @@ import "../styles/components/end.css";
 
 function End() {
   const { state, setState } = useContext(AppContext);
-  const history = useHistory()
+  const history = useHistory();
 
   const handleOnClick = () => {
-    setState({ ...state, level: "", goEnd: false, hasWon: false });
+    setState({
+      ...state,
+      level: "",
+      goEnd: false,
+      hasWon: false,
+      showPlay: false,
+    });
     history.push("/");
   };
   return (
@@ -27,6 +36,7 @@ function End() {
       <div className="game-end__back" onClick={handleOnClick}>
         <AiOutlineRollback className="game-end__back-icon" />
       </div>
+      <Heart />
     </div>
   );
 }

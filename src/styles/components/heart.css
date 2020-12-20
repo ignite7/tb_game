@@ -1,0 +1,33 @@
+/* Game end heart */
+.game-end__heart {
+  position: fixed;
+  width: 5rem;
+  height: 5rem;
+  background-image: url("../../images/heart.png");
+  background-size: 1450px 50px;
+  top: -5rem;
+  animation-name: heart, move-y;
+  animation-duration: 0.8s, 5s;
+  animation-timing-function: steps(28), linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite, infinite;
+  will-change: transform;
+}
+
+@keyframes heart {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+@keyframes move-y {
+  0% {
+    transform: translateY(-5rem);
+  }
+  100% {
+    transform: translateY(100rem);
+  }
+}

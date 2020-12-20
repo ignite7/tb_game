@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <Fragment>
-      {!state.goGame || state.goEnd ? (
+      {!state.changeTitle ? (
         <h1>The Ball Game</h1>
       ) : (
         <h1>Touch The Ball</h1>

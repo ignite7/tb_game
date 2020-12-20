@@ -12,28 +12,26 @@ function Ball() {
 
   useEffect(() => {
     const column = document.getElementById("game-ball");
-    const balloon = document.getElementById("balloon-y")
+    const balloon = document.getElementById("balloon-y");
 
     if (state.level === "easy") {
       column.style.animationDuration = "2s";
-      balloon.style.animationDuration = "0.5s"
+      balloon.style.animationDuration = "0.5s";
     } else if (state.level === "normal") {
       column.style.animationDuration = "1.5s";
-      balloon.style.animationDuration = "0.4s"
+      balloon.style.animationDuration = "0.4s";
     } else if (state.level === "hard") {
       column.style.animationDuration = "0.8s";
-      balloon.style.animationDuration = "0.3s"
+      balloon.style.animationDuration = "0.3s";
     }
   });
 
   const handleOnClick = (event) => {
-    if (
-      (event.target.id === "balloon-x" && state.controlStatus === "running") ||
-      (event.target.id === "balloon-y" && state.controlStatus === "running")
-    ) {
+    if (event.target.id === "balloon-y" && state.controlStatus === "running") {
       setState({
         ...state,
         controlStatus: "",
+        changeTitle: false,
         goGame: false,
         goEnd: true,
         hasWon: true,
@@ -45,11 +43,7 @@ function Ball() {
     <div className="game-ball" id="game-ball">
       <div className="game-ball__column" id="column"></div>
       <div className="game-ball__container">
-        <div
-          onClick={handleOnClick}
-          className="game-ball__balloon-x"
-          id="balloon-x"
-        >
+        <div className="game-ball__balloon-x" id="balloon-x">
           <div
             onClick={handleOnClick}
             className="game-ball__balloon-y"
