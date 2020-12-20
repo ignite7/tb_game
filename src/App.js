@@ -1,6 +1,6 @@
 // React
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 //
 // Components
 import Layout from "./components/Layout";
@@ -15,9 +15,10 @@ function App() {
     <BrowserRouter>
       <Layout>
         <Switch>
-          <Route exact path="/" component={Start} />
+          <Route exact path="/tb_start" component={Start} />
           <Route exact path="/game" component={Game} />
           <Route exact path="/end" component={End} />
+          <Redirect from="/" to="tb_start" />
         </Switch>
       </Layout>
     </BrowserRouter>
