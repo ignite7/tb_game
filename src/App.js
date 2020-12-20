@@ -15,10 +15,10 @@ function App() {
     <BrowserRouter>
       <Layout>
         <Switch>
-          <Route exact path="/tb_start" component={Start} />
+          <Route exact path="/tb_game" component={Start} />
           <Route exact path="/game" component={Game} />
           <Route exact path="/end" component={End} />
-          <Redirect from="/" to="tb_start" />
+          <Redirect from="/" to="tb_game" />
         </Switch>
       </Layout>
     </BrowserRouter>
