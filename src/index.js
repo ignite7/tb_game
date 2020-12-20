@@ -10,6 +10,8 @@ import { AppContextProvider } from "./context/AppContext";
 
 // Css
 import "./styles/style.css";
+import "./styles/tablet.css";
+import "./styles/desktop.css";
 
 // DOM
 ReactDOM.render(

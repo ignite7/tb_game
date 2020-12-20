@@ -8,14 +8,13 @@ import AppContext from "../context/AppContext";
 // Components
 import Ball from "../components/Ball";
 import Controls from "../components/Controls";
-import End from "../components/End";
 
 function Game() {
   const { state, setState } = useContext(AppContext);
   const history = useHistory();
 
   useEffect(() => {
-    if (!state.username || state.error) {
+    if (!state.username || state.error || !state.goGame) {
       setState({
         ...state,
         error: "Complete the form before to play.",
@@ -26,14 +25,8 @@ function Game() {
 
   return (
     <Fragment>
-      {!state.goEnd && !state.hasWon ? (
-        <Fragment>
-          <Ball />
-          <Controls />
-        </Fragment>
-      ) : (
-        <End />
-      )}
+      <Ball />
+      <Controls />
     </Fragment>
   );
 }

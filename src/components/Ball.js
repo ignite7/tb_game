@@ -1,5 +1,6 @@
 // React
 import React, { useContext, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 // Context
 import AppContext from "../context/AppContext";
@@ -9,20 +10,25 @@ import "../styles/components/ball.css";
 
 function Ball() {
   const { state, setState } = useContext(AppContext);
+  const history = useHistory();
 
   useEffect(() => {
     const column = document.getElementById("game-ball");
-    const balloon = document.getElementById("balloon-y");
+    const balloonX = document.getElementById("balloon-x");
+    const balloonY = document.getElementById("balloon-y");
 
     if (state.level === "easy") {
-      column.style.animationDuration = "2s";
-      balloon.style.animationDuration = "0.5s";
+      column.style.animationDuration = "3s";
+      balloonX.style.animationDuration = "10s";
+      balloonY.style.animationDuration = "0.5s";
     } else if (state.level === "normal") {
       column.style.animationDuration = "1.5s";
-      balloon.style.animationDuration = "0.4s";
+      balloonX.style.animationDuration = "7s";
+      balloonY.style.animationDuration = "0.4s";
     } else if (state.level === "hard") {
       column.style.animationDuration = "0.8s";
-      balloon.style.animationDuration = "0.3s";
+      balloonX.style.animationDuration = "5s";
+      balloonY.style.animationDuration = "0.3s";
     }
     const sleep = setTimeout(() => {
       setState({
@@ -45,6 +51,7 @@ function Ball() {
         goEnd: true,
         hasWon: true,
       });
+      history.push("/end");
     }
   };
 

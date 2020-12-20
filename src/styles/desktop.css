@@ -1,0 +1,87 @@
+/* Desktop */
+@media (min-width: 800px) {
+  /* Base */
+  body {
+    width: 800px;
+  }
+
+  /* Header */
+  .header h1 {
+    font-size: 6rem;
+  }
+
+  /* Start */
+  .start-form label {
+    font-size: 3.5rem;
+  }
+  .start-form__username {
+    font-size: 2.8rem;
+  }
+  .start-form__error {
+    font-size: 2.1rem;
+  }
+  .start-level__btn {
+    font-size: 2.8rem;
+  }
+  .start-play__icon {
+    font-size: 13rem;
+  }
+
+  /* Game */
+  .game-ball__balloon-x {
+    width: 6.4rem;
+    height: 6.4rem;
+  }
+  .game-ball__balloon-y {
+    width: 6.4rem;
+    height: 6.4rem;
+    background-size: 6.4rem;
+  }
+
+  @keyframes balloon-x {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-15rem);
+    }
+    50% {
+      transform: translateX(15rem);
+    }
+    75% {
+      transform: translateX(-30rem);
+    }
+    100% {
+      transform: translateX(30rem);
+    }
+  }
+
+  .game-controls > div * {
+    font-size: 13rem;
+  }
+  .game-count {
+    font-size: 2.8rem;
+  }
+  .game-status {
+    font-size: 2.4rem;
+  }
+
+  /* End */
+  .end-username {
+    font-size: 4.8rem;
+  }
+  .end-regards {
+    font-size: 3.8rem;
+  }
+  .end-difficult {
+    font-size: 3.2rem;
+  }
+  .end-back-icon {
+    font-size: 13rem;
+  }
+
+  /* Footer */
+  .footer h6 {
+    font-size: 1.8rem;
+  }
+}
