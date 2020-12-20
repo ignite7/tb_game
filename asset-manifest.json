@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/tb_game/static/css/main.1463f2f7.chunk.css",
-    "main.js": "/tb_game/static/js/main.0e081198.chunk.js",
-    "main.js.map": "/tb_game/static/js/main.0e081198.chunk.js.map",
+    "main.css": "/tb_game/static/css/main.067f8d98.chunk.css",
+    "main.js": "/tb_game/static/js/main.eef31d35.chunk.js",
+    "main.js.map": "/tb_game/static/js/main.eef31d35.chunk.js.map",
     "runtime-main.js": "/tb_game/static/js/runtime-main.3945cbc7.js",
     "runtime-main.js.map": "/tb_game/static/js/runtime-main.3945cbc7.js.map",
     "static/js/2.dbf84d98.chunk.js": "/tb_game/static/js/2.dbf84d98.chunk.js",
     "static/js/2.dbf84d98.chunk.js.map": "/tb_game/static/js/2.dbf84d98.chunk.js.map",
     "index.html": "/tb_game/index.html",
-    "static/css/main.1463f2f7.chunk.css.map": "/tb_game/static/css/main.1463f2f7.chunk.css.map",
+    "static/css/main.067f8d98.chunk.css.map": "/tb_game/static/css/main.067f8d98.chunk.css.map",
     "static/js/2.dbf84d98.chunk.js.LICENSE.txt": "/tb_game/static/js/2.dbf84d98.chunk.js.LICENSE.txt",
     "static/media/heart.css": "/tb_game/static/media/heart.040a3429.png"
   },
   "entrypoints": [
     "static/js/runtime-main.3945cbc7.js",
     "static/js/2.dbf84d98.chunk.js",
-    "static/css/main.1463f2f7.chunk.css",
-    "static/js/main.0e081198.chunk.js"
+    "static/css/main.067f8d98.chunk.css",
+    "static/js/main.eef31d35.chunk.js"
   ]
 }
