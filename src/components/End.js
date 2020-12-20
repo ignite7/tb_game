@@ -28,6 +28,7 @@ function End() {
     });
     history.push("/");
   };
+
   return (
     <div className="game-end">
       <h2 className="game-end__username">{state.username}</h2>

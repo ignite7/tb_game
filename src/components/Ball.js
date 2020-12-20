@@ -24,7 +24,16 @@ function Ball() {
       column.style.animationDuration = "0.8s";
       balloon.style.animationDuration = "0.3s";
     }
-  });
+    const sleep = setTimeout(() => {
+      setState({
+        ...state,
+        sleep: false,
+        controlStatus: "running",
+      });
+    }, 3000);
+    return () => clearTimeout(sleep);
+    // eslint-disable-next-line
+  }, []);
 
   const handleOnClick = (event) => {
     if (event.target.id === "balloon-y" && state.controlStatus === "running") {

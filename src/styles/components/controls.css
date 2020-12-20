@@ -2,6 +2,8 @@
 .game-controls {
   display: flex;
   justify-content: center;
+  animation: control-opacity 1s ease-in-out forwards;
+  will-change: opacity;
 }
 .game-controls > div * {
   display: flex;
@@ -57,6 +59,18 @@
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes control-opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

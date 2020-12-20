@@ -23,13 +23,13 @@ function Controls() {
     let ballX = document.getElementById("balloon-x");
     let ballY = document.getElementById("balloon-y");
 
-    if (event.currentTarget.id === "pause") {
+    if (event.currentTarget.id === "pause" && !state.sleep) {
       gameBall.classList.add("pause");
       ballX.classList.add("pause");
       ballY.classList.add("pause");
       controlStatus.classList.add("active");
       setState({ ...state, controlStatus: "paused" });
-    } else if (event.currentTarget.id === "play") {
+    } else if (event.currentTarget.id === "play" && !state.sleep) {
       gameBall.classList.remove("pause");
       ballX.classList.remove("pause");
       ballY.classList.remove("pause");
@@ -49,33 +49,40 @@ function Controls() {
 
   return (
     <Fragment>
-      {state.sleep && (
-        <div className="game-count active" id="game-count">
+      {state.sleep ? (
+        <div className="game-count" id="game-count">
           <h3>Game starts in </h3>
         </div>
+      ) : (
+        <Fragment>
+          <div className="game-status" id="game-status">
+            <h3>Game Paused</h3>
+          </div>
+          <div className="game-controls">
+            <div
+              onClick={handleOnClick}
+              className="game-controls__play"
+              id="play"
+            >
+              <FaPlay />
+            </div>
+            <div
+              onClick={handleOnClick}
+              className="game-controls__pause"
+              id="pause"
+            >
+              <FaPause />
+            </div>
+            <div
+              onClick={handleOnClick}
+              className="game-controls__backward"
+              id="backward"
+            >
+              <FaBackward />
+            </div>
+          </div>
+        </Fragment>
       )}
-      <div className="game-status" id="game-status">
-        <h3>Game Paused</h3>
-      </div>
-      <div className="game-controls">
-        <div onClick={handleOnClick} className="game-controls__play" id="play">
-          <FaPlay />
-        </div>
-        <div
-          onClick={handleOnClick}
-          className="game-controls__pause"
-          id="pause"
-        >
-          <FaPause />
-        </div>
-        <div
-          onClick={handleOnClick}
-          className="game-controls__backward"
-          id="backward"
-        >
-          <FaBackward />
-        </div>
-      </div>
     </Fragment>
   );
 }

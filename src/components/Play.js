@@ -30,24 +30,11 @@ function Play() {
         goGame: true,
         sleep: true,
         changeTitle: true,
+        controlStatus: "waiting",
         error: "",
-      });
-      sleep().then(() => {
-        setState({
-          ...state,
-          goGame: true,
-          sleep: false,
-          changeTitle: true,
-          controlStatus: "running",
-          error: "",
-        });
       });
       history.push("/game");
     }
-  };
-
-  const sleep = () => {
-    return new Promise((resolve) => setTimeout(resolve, 3000));
   };
 
   return (
